@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import scrapy
 import csv
+import os
 
 
 class ReifenSpider(scrapy.Spider):
@@ -10,7 +11,8 @@ class ReifenSpider(scrapy.Spider):
 
 
     #It's read the all row for GTIN
-    with open('Input/gtin.csv', 'r') as f:
+    # with open('Input/gtin.csv', 'r') as f:
+    with open(os.path.join("Input","gtin.csv"), 'r') as f:
         reader = csv.reader(f)
         for line in reader:
             line=line[0].strip()
